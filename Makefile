@@ -22,7 +22,7 @@ $(LIBRARY): $(OBJ_LIBRARY)
 	$(CC) -c $(CC_FLAGS) -fpic $< -o $@
 
 
-$(EXECUTABLE): $(OBJ_EXECUTABLE) $(HEADER)
+$(EXECUTABLE): $(OBJ_EXECUTABLE) $(HEADER) $(LIBRARY)
 	$(CC) $< -L . $(LIBRARY) -o $@
 
 %.exec.o: %.cpp $(HEADER)
